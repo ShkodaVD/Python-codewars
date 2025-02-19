@@ -1,1 +1,23 @@
+"""
+Давайте играть! Вам нужно вернуть, какой игрок выиграл! В случае ничьей верните Draw!.
 
+Примеры (Вход1, Вход2 -> Выход):
+
+"scissors", "paper" --> "Player 1 won!"
+"scissors", "rock" --> "Player 2 won!"
+"paper", "paper" --> "Draw!"
+"""
+def rock_paper_scissors(player1, player2):
+    if player1 == player2:
+        return "Ничья!"
+    elif (player1 == "ножницы" and player2 == "бумага") or \
+         (player1 == "бумага" and player2 == "камень") or \
+         (player1 == "камень" and player2 == "ножницы"):
+        return "Игрок 1 выиграл!"
+    else:
+        return "игрок 2 выиграл!"
+
+player1_choice = input("Игрок 1, делает выбор (камень, бумага, или ножницы): ")
+player2_choice = input("Игрок 2, делает выбор (камень, бумага, или ножницы): ")
+result = rock_paper_scissors(player1_choice, player2_choice)
+print(result)
